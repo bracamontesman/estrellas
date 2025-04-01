@@ -1,0 +1,376 @@
+/* 1. Reset y variables */
+:root {
+    --color-bg-main: #000033;
+    --color-bg-container: #000066;
+    --color-bg-dark: #000044;
+    --color-border: #3366CC;
+    --color-text: #CCCCCC;
+    --color-text-bright: #FFFFFF;
+    --color-link: #99CCFF;
+    --color-highlight: #FFFF00;
+    --font-main: "Courier New", Courier, monospace;
+}
+
+/* 2. Estilos base */
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg-main);
+    margin: 0;
+    padding: 15px;
+    line-height: 1.4;
+    color: var(--color-text);
+}
+
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+    background-color: var(--color-bg-container);
+    border: 1px solid var(--color-border);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* 3. Header y Navegación */
+.header {
+    text-align: center;
+    border-bottom: 2px solid var(--color-border);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.header h1 {
+    color: var(--color-text-bright);
+    text-shadow: 2px 2px #000000;
+}
+
+.navigation {
+    background-color: #000099;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.navigation a {
+    color: var(--color-text-bright);
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 5px;
+    display: inline-block;
+}
+
+.navigation a:hover {
+    background-color: var(--color-border);
+}
+
+/* 4. Layout Principal */
+.content-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.content-table td {
+    padding: 10px;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    width: 30%;
+    background-color: var(--color-bg-dark);
+    border: 1px solid var(--color-border);
+}
+
+.main-content {
+    width: 70%;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+/* 5. Sidebar */
+.sidebar-content {
+    padding: 15px;
+}
+
+.sidebar h3 {
+    color: var(--color-text-bright);
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    color: var(--color-link);
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+/* 6. Formularios */
+.form-grupo {
+    margin-bottom: 15px;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 10px;
+    align-items: start;
+}
+
+.form-grupo label {
+    color: var(--color-link);
+    padding-top: 8px;
+    text-align: right;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+    width: 100%;
+    padding: 8px;
+    background-color: var(--color-bg-main);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-bright);
+    font-family: var(--font-main);
+    box-sizing: border-box;
+}
+
+button, .btn {
+    background-color: #000099;
+    color: var(--color-text-bright);
+    padding: 10px 20px;
+    border: 1px solid var(--color-border);
+    cursor: pointer;
+    font-family: var(--font-main);
+}
+
+button:hover, .btn:hover {
+    background-color: #0000CC;
+}
+
+/* 7. Mensajes */
+.mensaje-exito {
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #006600;
+    color: var(--color-text-bright);
+    border: 1px solid #00CC00;
+}
+
+.mensaje-error {
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #660000;
+    color: var(--color-text-bright);
+    border: 1px solid #CC0000;
+}
+
+/* 8. Footer */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 2px solid var(--color-border);
+    padding-top: 10px;
+    color: var(--color-link);
+}
+
+.visitor-counter {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+    color: var(--color-highlight);
+}
+
+/* 9. Media Queries */
+@media screen and (max-width: 768px) {
+    .content-table, 
+    .content-table tbody, 
+    .content-table tr, 
+    .content-table td {
+        display: block;
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .navigation a {
+        margin: 0;
+        padding: 8px 0;
+        width: 100%;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .navigation a:last-child {
+        border-bottom: none;
+    }
+
+    .sidebar {
+        width: calc(100% - 40px);
+        margin: 20px auto;
+        max-width: 300px;
+    }
+
+    .main-content {
+        width: calc(100% - 40px);
+        margin: 0 20px;
+        padding: 0;
+    }
+
+    .form-grupo {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grupo label {
+        text-align: left;
+        padding-top: 0;
+    }
+}
+
+/* Estilos para la página de inicio */
+.welcome-section {
+    padding: 20px;
+    background-color: var(--color-bg-dark);
+    border: 1px solid var(--color-border);
+}
+
+.welcome-section h1 {
+    color: var(--color-text-bright);
+    margin: 0 0 20px 0;
+}
+
+.welcome-section p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.latest-updates {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--color-border);
+}
+
+.latest-updates h2 {
+    color: var(--color-link);
+    margin-bottom: 15px;
+}
+
+.latest-updates ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.latest-updates li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.latest-updates li:before {
+    content: '★';
+    position: absolute;
+    left: 0;
+    color: var(--color-highlight);
+}
+/* RSS Feed */
+.rss-feed {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: var(--color-bg-dark);
+    border: 1px solid var(--color-border);
+}
+
+.rss-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-highlight);
+    text-decoration: none;
+    padding: 5px;
+}
+
+.rss-link:hover {
+    background-color: var(--color-bg-container);
+}
+
+.rss-link img {
+    width: 16px;
+    height: 16px;
+}
+
+.entrada-tags {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--color-border);
+}
+
+.tag-link {
+    display: inline-block;
+    padding: 2px 8px;
+    margin: 2px;
+    background-color: var(--color-bg-dark);
+    border: 1px solid var(--color-border);
+    color: var(--color-link);
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+/* Estilos para la nube de tags */
+.tags-cloud {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: var(--color-bg-dark);
+    border: 1px solid var(--color-border);
+}
+
+
+.tag-link:hover,
+.tag-link.active {
+    background-color: var(--color-border);
+    color: var(--color-text-bright);
+}
+
+.tag-header {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.tag-description {
+    color: var(--color-link);
+    font-style: italic;
+    margin: 10px 0;
+}
+
+.categoria-header {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.categoria-description {
+    color: var(--color-link);
+    font-style: italic;
+    margin: 10px 0;
+}
+
+.sidebar ul li a.active {
+    color: var(--color-highlight);
+    font-weight: bold;
+}
